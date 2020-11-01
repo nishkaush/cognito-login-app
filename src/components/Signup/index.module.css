@@ -1,0 +1,51 @@
+.outerContainer {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.error {
+  color: white;
+  background: red;
+  padding: 20px;
+  transition: all 1s;
+  word-wrap: break-word;
+  font-size: 0.8em;
+}
+
+.form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  max-width: 400px;
+  min-height: 300px;
+}
+input {
+  border: none;
+  border-bottom: 1px solid #cecece;
+  width: 300px;
+  padding: 10px;
+  margin: 10px;
+}
+
+button {
+  width: 160px;
+  height: 30px;
+  border: none;
+  background: #fdc605;
+  margin-top: 20px;
+  border-radius: 2px;
+}
+a {
+  text-decoration: none;
+}
+
+.forgotPassword {
+  color: red;
+  font-size: 0.8em;
+  margin-top: 10px;
+}

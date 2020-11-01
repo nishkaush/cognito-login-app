@@ -22,7 +22,6 @@
   align-items: center;
   flex-direction: column;
   max-width: 400px;
-  min-height: 300px;
 }
 input {
   border: none;
@@ -39,4 +38,14 @@ button {
   background: #fdc605;
   margin-top: 20px;
   border-radius: 2px;
+}
+a {
+  text-decoration: none;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.forgotPassword {
+  color: red;
+  font-size: 0.8em;
 }

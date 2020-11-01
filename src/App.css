@@ -1,5 +1,20 @@
 .App {
   text-align: center;
+  background: rgba(0, 0, 0, 0.8);
+  color: white;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+a {
+  color: royalblue;
+}
+input {
+  border: none;
+  border-radius: 2px;
 }
 
 .App-logo {
