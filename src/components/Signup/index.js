@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 import styles from "./index.module.css";
 import SignupUser from "./../../Cognito/signup";
 
@@ -59,9 +59,6 @@ const Signup = () => {
           onChange={(e) => handleInputChange("displayName", e)}
         />
         <button type="submit">Sign up</button>
-        <Link to="/forgot-password" className={styles.forgotPassword}>
-          Forgot Password
-        </Link>
       </form>
     </div>
   );

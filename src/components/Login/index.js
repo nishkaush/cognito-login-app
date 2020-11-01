@@ -1,5 +1,5 @@
-import React, { useState, useContext } from "react";
-import { useHistory } from "react-router-dom";
+import React, { useState, useContext, useEffect } from "react";
+import { useHistory, useLocation, Link } from "react-router-dom";
 import styles from "./index.module.css";
 import loginUser from "./../../Cognito/login";
 
@@ -7,11 +7,21 @@ import { AuthContext } from "./../../Routes";
 
 const Login = () => {
   const history = useHistory();
+  const location = useLocation();
   const auth_context = useContext(AuthContext);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [showSuccess, setShowSuccess] = useState(false);
 
   const [error, setError] = useState({});
+
+  useEffect(() => {
+    if (location.state && location.state.passwordResetSuccess) {
+      setShowSuccess(true);
+      const myTimeout = setTimeout(() => setShowSuccess(false), 5000);
+      return () => clearTimeout(myTimeout);
+    }
+  }, [location.state]);
 
   const handleInputChange = (type, e) => {
     if (error) setError({});
@@ -48,6 +58,7 @@ const Login = () => {
 
       <form className={styles.form} onSubmit={handleFormSubmission}>
         {error.message && <p className={styles.error}>{error.message}</p>}
+        {showSuccess && <p>Password reset successful!</p>}
         <input
           type="email"
           placeholder="Type Email"
@@ -63,6 +74,9 @@ const Login = () => {
           onChange={(e) => handleInputChange("password", e)}
         />
         <button type="submit">Login</button>
+        <Link to="/forgot-password" className={styles.forgotPassword}>
+          Forgot Password
+        </Link>
       </form>
     </div>
   );
